@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v6.0.6, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    <meta name="description" content="Explore Arivu Kalam's comprehensive range of innovative services across multiple departments.">
+    <title>Arivu Kalam Services - Innovation Across Departments</title>
+    <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;700&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;700&display=swap&display=swap">
+    </noscript>
+    <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=jTeDRe">
+    <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=jTeDRe" type="text/css">
+    
+    <style>
+        /* Smooth scrolling for the entire page */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Fade in animation keyframes */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .animate-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .animate-left.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .animate-right.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .animate-scale {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.8s ease-out;
+        }
+
+        .animate-scale.animated {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Navigation bar animation */
+        .navbar {
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(255,255,255,0.95) !important;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Button hover effects */
+        .btn {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Gradient text animation */
+        .gradient-text {
+            background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        /* Loading animation overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Enhanced service card styles */
+        .modern-services {
+            background: #ffffff;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0f0f0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            transform: translateY(0);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(102, 126, 234, 0.2);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            font-size: 28px;
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            color: #333;
+            position: relative;
+            z-index: 2;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .eco-icon, .agri-icon, .ev-icon, .waste-icon, .smart-icon, 
+        .safety-icon, .power-icon, .utility-icon, .innovation-icon, .aero-icon {
+            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            border: none;
+        }
+        
+        .service-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #1a1a1a;
+            position: relative;
+            z-index: 2;
+            transition: color 0.3s ease;
+        }
+
+        .service-card:hover .service-title {
+            color: #667eea;
+        }
+        
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .service-item {
+            padding: 12px 0;
+            color: #666;
+            font-weight: 400;
+            position: relative;
+            padding-left: 30px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            border-radius: 6px;
+            margin-bottom: 4px;
+        }
+        
+        .service-item::before {
+            content: '▸';
+            position: absolute;
+            left: 10px;
+            color: #667eea;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            color: #333;
+            background: rgba(102, 126, 234, 0.05);
+            padding-left: 35px;
+        }
+
+        .service-item:hover::before {
+            color: #764ba2;
+            transform: translateX(5px);
+        }
+        
+        .service-card:hover .service-item {
+            color: #444;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+            position: relative;
+            z-index: 2;
+            padding-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+        
+        .services-grid {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Stagger animation delays */
+        .stagger-1 { animation-delay: 0.1s; }
+        .stagger-2 { animation-delay: 0.2s; }
+        .stagger-3 { animation-delay: 0.3s; }
+        .stagger-4 { animation-delay: 0.4s; }
+        .stagger-5 { animation-delay: 0.5s; }
+        .stagger-6 { animation-delay: 0.6s; }
+
+        /* Pulse hover effect */
+        .pulse-hover:hover {
+            animation: pulse 0.6s ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .service-card {
+                padding: 25px;
+                margin-bottom: 25px;
+            }
+            
+            .modern-services {
+                padding: 60px 0;
+            }
+
+            .service-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+        }
+        
+        /* Removing floating shapes for business look */
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <section data-bs-version="5.1" class="menu menu2 cid-uSy79ytdql" once="menu" id="menu-5-uSy79ytdql">
+        <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+            <div class="container">
+                 <div class="navbar-brand">
+                    <span class="navbar-logo">
+                        <a href="home.html"><img src="logo.jpg" alt="Arivu Kalam Logo" style="height: 4.3rem;"></a>   
+                    </span>
+                    <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-4"
+                            href="home.html">Arivu Kalam</a></span>
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="sample.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="service.html" aria-expanded="false">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="navbar-buttons mbr-section-btn">
+                        <a class="btn btn-primary display-4" href="home.html">Home</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <!-- Modern Services Section -->
+    <section class="modern-services animate-on-scroll">
+        <div class="container">
+            <div class="section-header animate-on-scroll"><br><br>
+                <h1 class="section-title gradient-text">Our Services</h1>
+                <p class="section-subtitle">
+                    Discover our comprehensive range of innovative solutions designed to transform industries and create a sustainable future
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="row">
+                    <!-- Eco & Environment Department -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card animate-scale stagger-1 pulse-hover">
+                            <div class="service-icon eco-icon">🌱</div>
+                            <h3 class="service-title">Eco & Environment</h3>
+                            <ul class="service-list">
+                                <li class="service-item">Zero Waste Solutions</li>
+                                <li class="service-item">CO₂ Emission Control</li>
+                                <li class="service-item">E-waste Management</li>
+                                <li class="service-item">Grass Cutting & Lake Cutters</li>
+                                <li class="service-item">Surveillance Rentable</li>
+                                <li class="service-item">Banana Plant Wind Protection</li>
+                                <li class="service-item">QR Scanning in Products</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Agri-Tech Department -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card animate-scale stagger-2 pulse-hover">
+                            <div class="service-icon agri-icon">🌾</div>
+                            <h3 class="service-title">Agri-Tech Solutions</h3>
+                            <ul class="service-list">
+                                <li class="service-item">Automatic Soil Testing & Irrigation</li>
+                                <li class="service-item">Smart Farming Management</li>
+                                <li class="service-item">Plant Disease Detection</li>
+                                <li class="service-item">Coconut Waste to Straw</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- EV & Mobility Department -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card animate-scale stagger-3 pulse-hover">
+                            <div class="service-icon ev-icon">⚡</div>
+                            <h3 class="service-title">EV & Mobility</h3>
+                            <ul class="service-list">
+                                <li class="service-item">Wireless EV Charging</li>
+                                <li class="service-item">Bus Tap and Pay System</li>
+                                <li class="service-item">Hydrogen Vehicle (IIT PALS)</li>
+                                <li class="service-item">Ergonomic Design in EV</li>
+                                <li class="service-item">On-Hill Braking Support</li>
+                                <li class="service-item">Hydrogen Recycling Station</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Waste to Energy Department -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card animate-scale stagger-4 pulse-hover">
+                            <div class="service-icon waste-icon">♻️</div>
+                            <h3 class="service-title">Waste to Energy</h3>
+                            <ul class="service-list">
+                                <li class="service-item">Food Collection & Donation</li>
+                                <li class="service-item">Thermal Power Plant Heat Recovery</li>
+                                <li class="service-item">Plastic to Building Bricks</li>
+                                <li class="service-item">Recycling Hydro Power Plant</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Smart Systems & Tech -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card animate-scale stagger-5 pulse-hover">
+                            <div class="service-icon smart-icon">🤖</div>
+                            <h3 class="service-title">Smart Systems & Tech</h3>
+                            <ul class="service-list">
+                                <li class="service-item">Advanced Feedback System</li>
+                                <li class="service-item">Street Light Automation</li>
+                                <li class="service-item">Coolant Counting Method</li>
+                                <li class="service-item">Engine Heat Power Recovery</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Safety & Surveillance -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card animate-scale stagger-6 pulse-hover">
+                            <div class="service-icon safety-icon">🛡️</div>
+                            <h3 class="service-title">Safety & Surveillance</h3>
+                            <ul class="service-list">
+                                <li class="service-item">Woman Safety Kit with Camera</li>
+                                <li class="service-item">Smart Copy Alert System</li>
+                                <li class="service-item">Oil Skimmer Technology</li>
+                                <li class="service-item">Innovation Idea Hub</li>
+                                <li class="service-item">Surveillance Rentable Units</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Power Systems & Recovery -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card animate-scale stagger-1 pulse-hover">
+                            <div class="service-icon power-icon">🔋</div>
+                            <h3 class="service-title">Power Systems</h3>
+                            <ul class="service-list">
+                                <li class="service-item">Hydrogen Recycling Station</li>
+                                <li class="service-item">Thermal Waste Recovery</li>
+                                <li class="service-item">Recycling Hydro Power Plant</li>
+                                <li class="service-item">Coolant-Based Recovery</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Public Utility -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card animate-scale stagger-2 pulse-hover">
+                            <div class="service-icon utility-icon">🏗️</div>
+                            <h3 class="service-title">Public Infrastructure</h3>
+                            <ul class="service-list">
+                                <li class="service-item">Smart Toilet Systems</li>
+                                <li class="service-item">Streetlight Automation</li>
+                                <li class="service-item">Battery Thermal Management</li>
+                                <li class="service-item">Plastic Waste Interlock Bricks</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Innovation & R&D -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card animate-scale stagger-3 pulse-hover">
+                            <div class="service-icon innovation-icon">💡</div>
+                            <h3 class="service-title">Innovation & R&D</h3>
+                            <ul class="service-list">
+                                <li class="service-item">Innovation Idea Hub</li>
+                                <li class="service-item">Learn with Purpose</li>
+                                <li class="service-item">Student Project Incubator</li>
+                                <li class="service-item">Project Portal Platform</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Aero & Drone -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="service-card animate-scale stagger-4 pulse-hover">
+                            <div class="service-icon aero-icon">🚁</div>
+                            <h3 class="service-title">Aero & Drone Tech</h3>
+                            <ul class="service-list">
+                                <li class="service-item">Solar Drone Surveillance</li>
+                                <li class="service-item">Agricultural Drone Solutions</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section data-bs-version="5.1" class="footer2 cid-uSy79yypY2" once="footers" id="footer-5-uSy79yypY2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 center mt-2 mb-3">
+                    <p class="mbr-fonts-style copyright mb-0 display-7">© 2025 Arivu Kalam. All rights reserved.<br>Created By Navanidhiram A</p>
+                </div>
+                <div class="col-12 col-lg-6 center">
+                    <div class="row-links mt-2 mb-3">
+                        <ul class="row-links-soc">
+                            <li class="row-links-soc-item mbr-fonts-style display-7">
+                                <a href="#" class="text-white">About</a>
+                            </li>
+                            <li class="row-links-soc-item mbr-fonts-style display-7">
+                                <a href="#" class="text-white">Services</a>
+                            </li>
+                            <li class="row-links-soc-item mbr-fonts-style display-7">
+                                <a href="#" class="text-white">Careers</a>
+                            </li>
+                            <li class="row-links-soc-item mbr-fonts-style display-7">
+                                <a href="#" class="text-white">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/smoothscroll/smooth-scroll.js"></script>
+    <script src="assets/ytplayer/index.js"></script>
+    <script src="assets/dropdown/js/navbar-dropdown.js"></script>
+    <script src="assets/theme/js/script.js"></script>
+
+    <!-- Custom Animation Scripts -->
+    <script>
+        // Loading screen
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loadingOverlay = document.querySelector('.loading-overlay');
+                if (loadingOverlay) {
+                    loadingOverlay.classList.add('hidden');
+                    setTimeout(() => loadingOverlay.remove(), 500);
+                }
+            }, 1000);
+        });
+
+        // Scroll animations
+        function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        function isElementPartiallyInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return rect.top < window.innerHeight && rect.bottom >= 0;
+        }
+
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.animate-on-scroll, .animate-left, .animate-right, .animate-scale');
+            
+            elements.forEach(function(element) {
+                if (isElementPartiallyInViewport(element)) {
+                    element.classList.add('animated');
+                }
+            });
+        }
+
+        // Navbar scroll effect
+        function handleNavbarScroll() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+
+        // Smooth scroll for anchor links
+        function smoothScrollToAnchor() {
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+
+        // Service card hover effects
+        function enhanceServiceCards() {
+            const serviceCards = document.querySelectorAll('.service-card');
+            
+            serviceCards.forEach((card, index) => {
+                // Add entrance animation delay
+                card.style.animationDelay = `${index * 0.1}s`;
+                
+                // Enhanced hover effects
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-15px) scale(1.02)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        }
+
+        // Typing effect for title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Icon animation on scroll
+        function animateIcons() {
+            const icons = document.querySelectorAll('.service-icon');
+            
+            icons.forEach(icon => {
+                if (isElementPartiallyInViewport(icon) && !icon.classList.contains('animated')) {
+                    icon.classList.add('animated');
+                    icon.style.animation = 'bounce 0.6s ease-out';
+                }
+            });
+        }
+
+        // Parallax effect for service items
+        function parallaxServiceItems() {
+            const scrolled = window.pageYOffset;
+            const serviceItems = document.querySelectorAll('.service-item');
+            
+            serviceItems.forEach((item, index) => {
+                const speed = 0.02 + (index % 3) * 0.01;
+                item.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        }
+
+        // Initialize all animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add floating animation to logo
+            const logo = document.querySelector('.navbar-logo img');
+            if (logo) {
+                logo.classList.add('float-animation');
+            }
+
+            // Add pulse hover to buttons
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.classList.add('pulse-hover');
+            });
+
+            // Initialize functions
+            smoothScrollToAnchor();
+            enhanceServiceCards();
+            
+            // Apply typing effect to title
+            const titleElement = document.querySelector('.section-title');
+            if (titleElement) {
+                const originalText = titleElement.textContent;
+                setTimeout(() => {
+                    typeWriter(titleElement, originalText, 100);
+                }, 1200);
+            }
+            
+            // Initial animations
+            animateOnScroll();
+            animateIcons();
+        });
+
+        // Scroll event listeners
+        window.addEventListener('scroll', function() {
+            requestAnimationFrame(() => {
+                animateOnScroll();
+                handleNavbarScroll();
+                animateIcons();
+                parallaxServiceItems();
+            });
+        });
+
+        // Add bounce animation keyframe
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes bounce {
+                0%, 20%, 53%, 80%, 100% {
+                    transform: translate3d(0,0,0);
+                }
+                40%, 43% {
+                    transform: translate3d(0, -20px, 0);
+                }
+                70% {
+                    transform: translate3d(0, -10px, 0);
+                }
+                90% {
+                    transform: translate3d(0, -4px, 0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Enhanced service item interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceItems = document.querySelectorAll('.service-item');
+            
+            serviceItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(10px)';
+                    this.style.background = 'rgba(102, 126, 234, 0.1)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                    this.style.background = 'transparent';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
