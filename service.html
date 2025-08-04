@@ -118,15 +118,27 @@
             transform: scale(1);
         }
 
-        /* Navigation bar animation */
+        /* Navigation bar animation - always visible and professional */
         .navbar {
             transition: all 0.4s ease;
             backdrop-filter: blur(10px);
+            background-color: rgba(255,255,255,0.95) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
         }
 
         .navbar.scrolled {
-            background-color: rgba(255,255,255,0.95) !important;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            background-color: rgba(255,255,255,0.98) !important;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Body padding for fixed navbar */
+        body {
+            padding-top: 80px;
         }
 
         /* Button hover effects */
@@ -157,16 +169,6 @@
         .btn:hover::before {
             width: 300px;
             height: 300px;
-        }
-
-        /* Floating animation */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .float-animation {
-            animation: float 3s ease-in-out infinite;
         }
 
         /* Gradient text animation */
@@ -218,26 +220,38 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Enhanced service card styles */
+        /* Enhanced service card styles - Professional Layout */
         .modern-services {
-            background: #ffffff;
-            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 100px 0;
             position: relative;
             overflow: hidden;
+        }
+
+        .modern-services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23667eea" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+            opacity: 0.5;
         }
         
         .service-card {
             background: #ffffff;
-            border-radius: 16px;
-            padding: 35px;
+            border-radius: 20px;
+            padding: 40px;
             margin-bottom: 30px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            border: 1px solid #f0f0f0;
-            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(102, 126, 234, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
             height: 100%;
             transform: translateY(0);
+            will-change: transform;
         }
         
         .service-card::before {
@@ -246,64 +260,78 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 4px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            height: 5px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #667eea 100%);
             transform: scaleX(0);
-            transition: transform 0.4s ease;
+            transition: transform 0.3s ease;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s ease;
         }
         
         .service-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            border-color: rgba(102, 126, 234, 0.2);
+            transform: translateY(-12px) scale(1.01);
+            box-shadow: 0 25px 50px rgba(102, 126, 234, 0.15);
+            border-color: rgba(102, 126, 234, 0.3);
         }
 
         .service-card:hover::before {
             transform: scaleX(1);
         }
+
+        .service-card:hover::after {
+            left: 100%;
+        }
         
         .service-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
+            width: 70px;
+            height: 70px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 25px;
-            font-size: 28px;
-            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
+            margin-bottom: 30px;
+            font-size: 32px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             color: #333;
             position: relative;
             z-index: 2;
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border: 2px solid rgba(102, 126, 234, 0.1);
         }
 
         .service-card:hover .service-icon {
-            transform: scale(1.1) rotate(5deg);
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            transform: scale(1.1) rotate(8deg);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-        }
-        
-        .eco-icon, .agri-icon, .ev-icon, .waste-icon, .smart-icon, 
-        .safety-icon, .power-icon, .utility-icon, .innovation-icon, .aero-icon {
-            background: linear-gradient(45deg, #f8f9fa, #e9ecef);
-            border: none;
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+            border-color: rgba(255, 255, 255, 0.3);
         }
         
         .service-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 25px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
             color: #1a1a1a;
             position: relative;
             z-index: 2;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            line-height: 1.3;
         }
 
         .service-card:hover .service-title {
             color: #667eea;
+            transform: translateX(5px);
         }
         
         .service-list {
@@ -315,36 +343,48 @@
         }
         
         .service-item {
-            padding: 12px 0;
+            padding: 15px 0;
             color: #666;
-            font-weight: 400;
+            font-weight: 500;
             position: relative;
-            padding-left: 30px;
-            transition: all 0.3s ease;
-            font-size: 0.95rem;
+            padding-left: 35px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1rem;
             line-height: 1.6;
-            border-radius: 6px;
-            margin-bottom: 4px;
+            border-radius: 10px;
+            margin-bottom: 8px;
+            border-left: 3px solid transparent;
         }
         
         .service-item::before {
-            content: '▸';
+            content: '✓';
             position: absolute;
-            left: 10px;
+            left: 12px;
+            top: 15px;
             color: #667eea;
             font-weight: bold;
+            font-size: 14px;
+            width: 16px;
+            height: 16px;
+            background: rgba(102, 126, 234, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             transition: all 0.3s ease;
         }
 
         .service-item:hover {
             color: #333;
-            background: rgba(102, 126, 234, 0.05);
-            padding-left: 35px;
+            background: linear-gradient(90deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+            padding-left: 40px;
+            border-left-color: #667eea;
         }
 
         .service-item:hover::before {
-            color: #764ba2;
-            transform: translateX(5px);
+            background: #667eea;
+            color: white;
+            transform: scale(1.2);
         }
         
         .service-card:hover .service-item {
@@ -353,63 +393,127 @@
         
         .section-header {
             text-align: center;
-            margin-bottom: 70px;
+            margin-bottom: 80px;
             position: relative;
-            z-index: 2;
-            padding-bottom: 30px;
+            z-index: 10;
+            padding-bottom: 40px;
         }
         
         .section-title {
-            font-size: 3rem;
-            font-weight: 700;
+            font-size: 3.5rem;
+            font-weight: 800;
             color: #1a1a1a;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(45deg, #667eea, #764ba2);
-            border-radius: 2px;
+            width: 100px;
+            height: 6px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 3px;
+            box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
         }
         
         .section-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: #666;
-            max-width: 700px;
+            max-width: 800px;
             margin: 0 auto;
-            line-height: 1.7;
-            font-weight: 300;
+            line-height: 1.8;
+            font-weight: 400;
         }
         
         .services-grid {
             position: relative;
-            z-index: 2;
+            z-index: 5;
         }
 
-        /* Stagger animation delays */
-        .stagger-1 { animation-delay: 0.1s; }
-        .stagger-2 { animation-delay: 0.2s; }
-        .stagger-3 { animation-delay: 0.3s; }
-        .stagger-4 { animation-delay: 0.4s; }
-        .stagger-5 { animation-delay: 0.5s; }
-        .stagger-6 { animation-delay: 0.6s; }
+        /* Professional Row Layout */
+        .service-row {
+            margin-bottom: 40px;
+        }
 
-        /* Pulse hover effect */
+        /* Enhanced responsive grid */
+        @media (min-width: 1200px) {
+            .col-lg-4 {
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+        }
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .col-lg-4 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+
+        /* Stagger animation delays - Professional timing */
+        .stagger-1 { animation-delay: 0.1s; opacity: 0; }
+        .stagger-2 { animation-delay: 0.2s; opacity: 0; }
+        .stagger-3 { animation-delay: 0.3s; opacity: 0; }
+        .stagger-4 { animation-delay: 0.4s; opacity: 0; }
+        .stagger-5 { animation-delay: 0.5s; opacity: 0; }
+        .stagger-6 { animation-delay: 0.6s; opacity: 0; }
+
+        .stagger-1.animated { opacity: 1; }
+        .stagger-2.animated { opacity: 1; }
+        .stagger-3.animated { opacity: 1; }
+        .stagger-4.animated { opacity: 1; }
+        .stagger-5.animated { opacity: 1; }
+        .stagger-6.animated { opacity: 1; }
+
+        /* Enhanced pulse hover effect */
         .pulse-hover:hover {
-            animation: pulse 0.6s ease-in-out;
+            animation: professionalPulse 0.4s ease-in-out;
         }
 
-        @keyframes pulse {
+        @keyframes professionalPulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
+            50% { transform: scale(1.01); }
             100% { transform: scale(1); }
+        }
+
+        /* Professional category indicators */
+        .eco-icon { background: linear-gradient(135deg, #28a745, #20c997) !important; color: white !important; }
+        .agri-icon { background: linear-gradient(135deg, #fd7e14, #ffc107) !important; color: white !important; }
+        .ev-icon { background: linear-gradient(135deg, #007bff, #6610f2) !important; color: white !important; }
+        .waste-icon { background: linear-gradient(135deg, #17a2b8, #6f42c1) !important; color: white !important; }
+        .smart-icon { background: linear-gradient(135deg, #6c757d, #495057) !important; color: white !important; }
+        .safety-icon { background: linear-gradient(135deg, #dc3545, #e83e8c) !important; color: white !important; }
+        .power-icon { background: linear-gradient(135deg, #ffc107, #fd7e14) !important; color: white !important; }
+        .utility-icon { background: linear-gradient(135deg, #6f42c1, #e83e8c) !important; color: white !important; }
+        .innovation-icon { background: linear-gradient(135deg, #20c997, #17a2b8) !important; color: white !important; }
+        .aero-icon { background: linear-gradient(135deg, #007bff, #0056b3) !important; color: white !important; }
+
+        /* Professional loading animation */
+        .loading-overlay {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            backdrop-filter: blur(5px);
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255,255,255,0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            animation: professionalSpin 1s linear infinite;
+        }
+
+        @keyframes professionalSpin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
         
         @media (max-width: 768px) {
@@ -462,12 +566,17 @@
                     </div>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+                     <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
                         <li class="nav-item">
-                            <a class="nav-link link text-black display-4" href="sample.html">About</a>
+                            <a class="nav-link link text-black display-4" href="service.html">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link link text-black display-4" href="service.html" aria-expanded="false">Services</a>
+                            <a class="nav-link link text-black display-4" href="service.html"
+                                aria-expanded="false">Services</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link link text-black display-4" href="#testimonials">Learn</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link link text-black display-4" href="#contact">Contact</a>
@@ -743,70 +852,91 @@
             });
         }
 
-        // Service card hover effects
+        // Service card hover effects - Professional and optimized
         function enhanceServiceCards() {
             const serviceCards = document.querySelectorAll('.service-card');
             
             serviceCards.forEach((card, index) => {
                 // Add entrance animation delay
-                card.style.animationDelay = `${index * 0.1}s`;
+                card.style.animationDelay = `${index * 0.15}s`;
                 
-                // Enhanced hover effects
+                // Optimized hover effects with requestAnimationFrame
+                let isHovering = false;
+                
                 card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-15px) scale(1.02)';
+                    if (!isHovering) {
+                        isHovering = true;
+                        requestAnimationFrame(() => {
+                            this.style.transform = 'translateY(-12px) scale(1.01)';
+                        });
+                    }
                 });
                 
                 card.addEventListener('mouseleave', function() {
+                    isHovering = false;
+                    requestAnimationFrame(() => {
+                        this.style.transform = 'translateY(0) scale(1)';
+                    });
+                });
+
+                // Add professional touch interactions
+                card.addEventListener('touchstart', function() {
+                    this.style.transform = 'translateY(-8px) scale(1.005)';
+                });
+
+                card.addEventListener('touchend', function() {
                     this.style.transform = 'translateY(0) scale(1)';
                 });
             });
         }
 
-        // Typing effect for title
-        function typeWriter(element, text, speed = 100) {
+        // Professional typing effect
+        function typeWriter(element, text, speed = 80) {
             let i = 0;
             element.innerHTML = '';
+            element.style.borderRight = '2px solid #667eea';
             
             function type() {
                 if (i < text.length) {
                     element.innerHTML += text.charAt(i);
                     i++;
                     setTimeout(type, speed);
+                } else {
+                    // Remove cursor after typing is complete
+                    setTimeout(() => {
+                        element.style.borderRight = 'none';
+                    }, 1000);
                 }
             }
             type();
         }
 
-        // Icon animation on scroll
+        // Optimized icon animation
         function animateIcons() {
             const icons = document.querySelectorAll('.service-icon');
             
-            icons.forEach(icon => {
-                if (isElementPartiallyInViewport(icon) && !icon.classList.contains('animated')) {
-                    icon.classList.add('animated');
-                    icon.style.animation = 'bounce 0.6s ease-out';
+            icons.forEach((icon, index) => {
+                if (isElementPartiallyInViewport(icon) && !icon.classList.contains('icon-animated')) {
+                    icon.classList.add('icon-animated');
+                    
+                    setTimeout(() => {
+                        requestAnimationFrame(() => {
+                            icon.style.animation = 'professionalBounce 0.6s ease-out';
+                        });
+                    }, index * 50);
                 }
             });
         }
 
-        // Parallax effect for service items
+        // Remove parallax effect to improve performance
         function parallaxServiceItems() {
-            const scrolled = window.pageYOffset;
-            const serviceItems = document.querySelectorAll('.service-item');
-            
-            serviceItems.forEach((item, index) => {
-                const speed = 0.02 + (index % 3) * 0.01;
-                item.style.transform = `translateY(${scrolled * speed}px)`;
-            });
+            // Removed for better performance on mobile devices
+            return;
         }
 
         // Initialize all animations
         document.addEventListener('DOMContentLoaded', function() {
-            // Add floating animation to logo
-            const logo = document.querySelector('.navbar-logo img');
-            if (logo) {
-                logo.classList.add('float-animation');
-            }
+            // Logo is now static (removed floating animation)
 
             // Add pulse hover to buttons
             document.querySelectorAll('.btn').forEach(btn => {
@@ -841,40 +971,82 @@
             });
         });
 
-        // Add bounce animation keyframe
+        // Add professional bounce animation keyframe
         const style = document.createElement('style');
         style.textContent = `
-            @keyframes bounce {
+            @keyframes professionalBounce {
                 0%, 20%, 53%, 80%, 100% {
-                    transform: translate3d(0,0,0);
+                    transform: translate3d(0,0,0) scale(1);
                 }
                 40%, 43% {
-                    transform: translate3d(0, -20px, 0);
+                    transform: translate3d(0, -15px, 0) scale(1.05);
                 }
                 70% {
-                    transform: translate3d(0, -10px, 0);
+                    transform: translate3d(0, -8px, 0) scale(1.02);
                 }
                 90% {
-                    transform: translate3d(0, -4px, 0);
+                    transform: translate3d(0, -3px, 0) scale(1.01);
                 }
+            }
+
+            /* Professional fade-in animation */
+            @keyframes professionalFadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px) scale(0.95);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                }
+            }
+
+            .service-card {
+                animation: professionalFadeIn 0.6s ease-out forwards;
             }
         `;
         document.head.appendChild(style);
 
-        // Enhanced service item interactions
+        // Enhanced service item interactions - Professional
         document.addEventListener('DOMContentLoaded', function() {
             const serviceItems = document.querySelectorAll('.service-item');
             
-            serviceItems.forEach(item => {
+            serviceItems.forEach((item, index) => {
+                // Add staggered entrance animation
+                item.style.animationDelay = `${0.1 + (index * 0.05)}s`;
+                
                 item.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateX(10px)';
-                    this.style.background = 'rgba(102, 126, 234, 0.1)';
+                    requestAnimationFrame(() => {
+                        this.style.transform = 'translateX(8px)';
+                        this.style.background = 'linear-gradient(90deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08))';
+                    });
                 });
                 
                 item.addEventListener('mouseleave', function() {
-                    this.style.transform = 'translateX(0)';
-                    this.style.background = 'transparent';
+                    requestAnimationFrame(() => {
+                        this.style.transform = 'translateX(0)';
+                        this.style.background = 'transparent';
+                    });
                 });
+            });
+
+            // Professional scroll-based animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all animated elements
+            document.querySelectorAll('.animate-on-scroll, .animate-scale, .service-card').forEach(el => {
+                observer.observe(el);
             });
         });
     </script>
